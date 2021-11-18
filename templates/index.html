@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="{% static 'images\Logo\logo.jpg' %}" type="image/icon type">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>CTI</title>
+<!--Bootstrap-->
+<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+<!--Stylesheets-->
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+<!--Responsive-->
+<link rel="stylesheet" type="text/css" href="{% static 'css/responsive.css' %}">
+<!--Animation-->
+<link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}">
+<!--Prettyphoto-->
+<link rel="stylesheet" type="text/css" href="{% static 'css/prettyPhoto.css' %}">
+<!--Font-Awesome-->
+<link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.css' %}">
+<!--Owl-Slider-->
+<link rel="stylesheet" type="text/css" href="{% static 'css/owl.carousel.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/owl.theme.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/owl.transitions.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/cssample.css' %}">
+
+</head>
+<body data-spy="scroll" data-target=".navbar-default" data-offset="100">
+<!--Preloader-->
+<div id="preloader">
+  <div id="pre-status">
+    <div class="preload-placeholder"></div>
+  </div>
+</div>
+<!--Navigation-->
+<header id="menu">
+  <div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+        
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active"><a class="scroll" href="#menu">Home</a></li>
+            <li><a class="scroll" href="#encrypt">Encrypt</a></li>
+            <li><a class="scroll" href="#decrypt">Decrypt</a></li>
+            <li><a class="scroll" href="#team">Team</a></li>
+            <li><a class="scroll" href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container-fluid -->
+    </div>
+  </div>
+</header>
+<!--Slider-Start-->
+<section id="slider">
+  <div id="home-carousel" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="item active" style="background-image:url({% static 'images/Slider/bg1.jpg' %});">
+        <div class="carousel-caption container">
+          <div class="row">
+            <div class="col-md-7 col-sm-12 col-xs-12">
+              <h2>Privacy matters</h2>
+                        <p class="mb-5"> Everything is <b>noticeable</b> in this technical world even our own data too. but, We all want to maintain our own privacy and for this 
+                        we'll go for any extent.</p>
+                        <hr class="mb-5">
+                        <p class="mb-5">So, let's <b>lock</b> the data with CODE.</p> 
+            </div>
+          </div>
+        </div>
+      </div>
+      
+  </div>
+  <!--/#home-carousel-->
+</section>
+<!--Encryption starts-->
+
+  <div class="encsection" id="encrypt">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="heading">
+        <h2 style="text-align: center;">ENCRYPT<span>ION</span></h2>
+        <p><span><strong></strong></span></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="encryption" style="background-image:url({% static 'images/Slider/bg2.jpg' %}); opacity: 0.8;">
+    <form action="{% url 'done' %}" method="post" id="encrypt_form" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="form-group">
+        {{form.as_p}}
+      </div>
+     
+
+      
+
+      <!--<div class="form-group file-area">
+        <label for="image1">File1:</label>
+        {{form.image1}}
+        <label for="image2">File2:</label>
+        {{form.image2}}
+
+      </div>-->
+      <div class="form-group">
+        <button class="button-primary" type="submit" >Done</button>
+      </div>
+
+    </form>
+  </div>
+<!-- Decryption section starts-->
+<div  id="decrypt">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="heading">
+      <h2 style="text-align: center;">DECRYPT<span>ION</span></h2>
+      <p><span><strong></strong></span></p>
+    </div>
+  </div>
+</div>
+<div class="encryption" style="background-image:url({% static 'images/Slider/bg3.jpg' %}); opacity: 0.8;">
+  <form action="{% url 'dec' %}" method="post" enctype="multipart/form-data" >
+    <p></p>
+    {% csrf_token %}
+      <div class="form-group">
+        
+        {{form1.as_p}}
+        
+      </div>
+
+    <div class="form-group">
+      <button type="submit">Done</button>
+    </div>
+
+  </form>
+</div>
+
+<!--Team-Section-Start-->
+<section id="team">
+  <div class="container">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="heading">
+        <h2>OUR TE<span>AM</span></h2>
+        <div class="line"></div>
+        <!--<p><span><strong>I</strong>t's not that we use Technology, We live Technology</span></p>-->
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 col-sm-6 col-xs-12 team-main-sec wow slideInUp" data-wow-duration="1s" data-wow-delay=".1s">
+        <div class="team-sec">
+          <div class="team-img"> <img src="{% static 'images/Team/gope1.jpg' %}" class="img-responsive" alt="">
+            <div class="team-desc">
+              <h5>Gopika</h5>
+              <p></p>
+              <ul class="team-social-icon">
+                <li><a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook-f"></i></a></li>
+                <li><a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#" data-toggle="tooltip" data-placement="top" title="Pinterest"><i class="fa fa-pinterest-p"></i></a></li>
+                <li><a href="#" data-toggle="tooltip" data-placement="top" title="Instagram"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="#" data-toggle="tooltip" data-placement="top" title="Google-plus"><i class="fa fa-google-plus"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6 col-xs-12 team-main-sec wow slideInUp" data-wow-duration="1s" data-wow-delay=".2s">
+        <div class="team-sec">
+          <div class="team-img"> <img src="{% static 'images/Team/vanaja.png' %}" class="img-responsive" alt="">
+            <div class="team-desc">
+              <h5>Sai Vanaja</h5>
+              <p></p>
+              <ul class="team-social-icon">
+                <li><a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook-f"></i></a></li>
+                <li><a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#" data-toggle="tooltip" data-placement="top" title="Pinterest"><i class="fa fa-pinterest-p"></i></a></li>
+                <li><a href="#" data-toggle="tooltip" data-placement="top" title="Instagram"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="#" data-toggle="tooltip" data-placement="top" title="Google-plus"><i class="fa fa-google-plus"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6 col-xs-12 team-main-sec wow slideInUp" data-wow-duration="1s" data-wow-delay=".3s">
+        <div class="team-sec">
+          <div class="team-img"> <img src="{% static 'images/Team/baggu2.jpg' %}" class="img-responsive" alt="">
+            <div class="team-desc">
+              <h5>Neelima</h5>
+              <p></p>
+              <ul class="team-social-icon">
+                <li><a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook-f"></i></a></li>
+                <li><a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#" data-toggle="tooltip" data-placement="top" title="Pinterest"><i class="fa fa-pinterest-p"></i></a></li>
+                <li><a href="#" data-toggle="tooltip" data-placement="top" title="Instagram"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="#" data-toggle="tooltip" data-placement="top" title="Google-plus"><i class="fa fa-google-plus"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6 col-xs-12 team-main-sec wow slideInUp" data-wow-duration="1s" data-wow-delay=".4s">
+        <div class="team-sec">
+          <div class="team-img"> <img src="{% static 'images/Team/me.jpg' %}" class="img-responsive" alt="">
+            <div class="team-desc">
+              <h5>Divya Lochana</h5>
+              <p></p>
+              <ul class="team-social-icon">
+                <li><a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook-f"></i></a></li>
+                <li><a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#" data-toggle="tooltip" data-placement="top" title="Pinterest"><i class="fa fa-pinterest-p"></i></a></li>
+                <li><a href="#" data-toggle="tooltip" data-placement="top" title="Instagram"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="#" data-toggle="tooltip" data-placement="top" title="Google-plus"><i class="fa fa-google-plus"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!--Contact-Section-Start-->
+<section id="contact">
+  <div class="container">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="heading">
+        <h2>CONTACT <span>US</span></h2>
+        <div class="line"></div>
+        <div class="line"></div>
+        <p><span><strong></strong></span></p>
+      </div>
+    </div>
+    <div class="text-center">
+      <div class="col-md-6 col-sm-6 contact-sec-1">
+        <h4>CONTACT IN<span>FO</span></h4>
+        <ul class="contact-form">
+          <li><i class="fa fa-map-marker"></i>
+            <h6><strong>Address:</strong> Andhra Pradesh, India </h6>
+          </li>
+          <li><i class="fa fa-envelope"></i>
+            <h6><strong>Mail Us:</strong> <a href="#">technostar@gmail.com</a></h6>
+          </li>
+          <li><i class="fa fa-phone"></i>
+            <h6><strong>Phone:</strong> +91 9441130021 </h6>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-6 col-sm-6">
+        <form id="main-contact-form" name="contact-form" method="post" action="#">
+          <div class="row  wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <input type="text" name="name" class="form-control" placeholder="Name" required="required">
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <input type="email" name="email" class="form-control" placeholder="Email Address" required="required">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="text" name="subject" class="form-control" placeholder="Subject" required="required">
+          </div>
+          <div class="form-group">
+            <textarea name="message" id="message" class="form-control" rows="4" placeholder="Enter your message" required="required"></textarea>
+          </div>
+          <a class="btn-send col-md-12 col-sm-12 col-xs-12" href="#">Send Now</a>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<footer id="footer">
+  <div class="bg-sec">
+    <div class="container">
+      <h2>LOOKING FORWARD TO <strong>HEARING </strong>FROM YOU!</h2>
+    </div>
+  </div>
+</footer>
+<footer id="footer-down">
+  <p> &copy; Copyright 2021 - Created By : <B>TECHNO_STAR</B> </p>
+</footer>
+<!--Jquery-->
+<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+<!--Boostrap-Jquery-->
+<script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+<!--Preetyphoto-Jquery-->
+<script type="text/javascript" src="{% static 'js/jquery.prettyPhoto.js' %}"></script>
+<!--NiceScroll-Jquery-->
+<script type="text/javascript" src="{% static 'js/jquery.nicescroll.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/waypoints.min.js' %}"></script>
+<!--Isotopes-->
+<script type="text/javascript" src="{% static 'js/jquery.isotope.js' %}"></script>
+<!--Wow-Jquery-->
+<script type="text/javascript" src="{% static 'js/wow.js' %}"></script>
+<!--Count-Jquey-->
+<script type="text/javascript" src="{% static 'js/jquery.countTo.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.inview.min.js' %}"></script>
+<!--Owl-Crousels-Jqury-->
+<script type="text/javascript" src="{% static 'js/owl.carousel.js' %}"></script>
+<!--Main-Scripts-->
+<script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.backstretch.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/templatemo-script.js' %}"></script>
+<script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+   
+</body>
+</html>
+
+<!-- Hosting24 Analytics Code -->
+<script type="text/javascript" src="http://stats.hosting24.com/count.php"></script>
+<!-- End Of Analytics Code -->

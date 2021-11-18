@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body bgcolor="#F0E68C">
+<h3><b><center> Content in database</center></b></h3>
+<ul style="list-style-type:circle">
+    {% for todo in todo_list %}
+    <li>{{ todo.email }}<br>{{ todo.description }}<br>{{ todo.key }}<br><br></li>
+    {% endfor %}
+</ul>
+</body>
+</html>
